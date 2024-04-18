@@ -18,13 +18,7 @@ body {
   font-size: 15px;
 }
 
-h2 {
-  margin: 0 0 20px 0;
-}
-
 .app {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 0 40px;
 }
 
@@ -33,16 +27,4 @@ h2 {
   grid-template-columns: 320px 1fr 320px;
   column-gap: 20px;
   height: 100%;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background: #1b1b1b;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  height: calc(100vh - 200px);
-  /* max-width: 300px; */
 }

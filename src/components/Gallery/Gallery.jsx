@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { toast } from 'react-toastify';
-import styles from './Gallery.module.css';
-import globalStyles from '../../App.module.css';
+
+import './gallery.scss'
+import Sidebar from '../Sidebar/Sidebar';
 
 const Gallery = (props) => {
   const { pictures, setPictures } = props;
 
   const sharePicture = (picture) => {
+    toast.info('Sharing picture is not implemented yet');
   }
 
   const downloadPicture = (picture) => {
@@ -26,29 +28,28 @@ const Gallery = (props) => {
   }
 
   return (
-    <section className={globalStyles.sidebar}>
-      <h2>Gallery</h2>
+    <Sidebar title="Gallery">
       {pictures.length === 0 && (
-        <div className={styles.empty}>
+        <div className="gallery_placeholder">
           <p>No pictures captured yet</p>
         </div>
       )}
-      <div className={styles.scroller}>
+      <div className="scroller">
         {pictures.map((picture, index) => (
-          <div key={index} className={styles.pictureWrapper}>
-            <div key={index} className={styles.picture}>
-              <img src={picture.dataUri} />
-              <div className={styles.controls}>
-                <button onClick={() => deletePicture(index)} class={styles.delete} />
-                <button onClick={() => sharePicture(picture)} class={styles.share} />
-                <button onClick={() => downloadPicture(picture)} class={styles.download} />
+          <div key={index} className="picture__wrapper">
+            <div className="picture">
+              <img src={picture.dataUri} alt={picture.title} />
+              <div className="controls">
+                <button onClick={() => deletePicture(index)} className="delete" />
+                <button onClick={() => sharePicture(picture)} className="share" />
+                <button onClick={() => downloadPicture(picture)} className="download" />
               </div>
             </div>
             <h3>{picture.title}</h3>
           </div>
         ))}
       </div>
-    </section>
+    </Sidebar>
   );
 }
 
