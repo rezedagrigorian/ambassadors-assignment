@@ -7,9 +7,11 @@ const Sidebar = (props) => {
 
   return (
     <section className="sidebar">
-      <h2 className="sidebar__header">
-        {title}
-      </h2>
+      {title && (
+        <h2 className="sidebar__header">
+          {title}
+        </h2>
+      )}
       <div className="sidebar__content">
         {children}
       </div>

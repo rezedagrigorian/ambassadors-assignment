@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useWebcamCapture } from "../../useWebcamCapture";
 
 import styles from './Workspace.module.css';
-import logo from '../../assets/stickers/slap.png';
 
 const Workspace = (props) => {
   const { sticker, addPicture } = props;
