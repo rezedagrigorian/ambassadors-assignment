@@ -1,6 +1,28 @@
+h3 {
+  margin: 15px 0;
+  padding: 0;
+}
+
+.stickersWrapper {
+  height: calc(100vh - 200px);
+}
+
 .stickers {
+  display: grid;
+  row-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  max-height: 250px;
+  overflow-y: scroll;
+
   img {
-    max-width: 100px;
+    max-width: 70px;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    background: unset;
+    border: none;
   }
 }
 
@@ -8,16 +30,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 20px;
   flex-direction: column;
   row-gap: 20px;
 }
 
 input {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #ccc;
-  margin-top: 10px;
 
   &:focus {
     outline: none;
@@ -30,15 +50,15 @@ input {
   align-items: center;
   justify-content: center;
   background: #1b1b1b;
-  border-radius: 30px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .captureButton {
   background: #6db9ff;
   color: #000;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 20px 20px;
+  border-radius: 30px;
   margin-top: 20px;
   cursor: pointer;
   border: none;

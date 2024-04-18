@@ -1,16 +1,79 @@
 .scroller {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    max-height: calc(100% - 140px);
-    overflow-y: scroll;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  max-height: calc(100% - 40px);
+  overflow-y: scroll;
 }
 
 .picture {
-    width: 100%;
+  display: flex;
+  position: relative;
 
-    img {
-        width: 100%;
-        border-radius: 10px;
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  border: 4px dashed rgba(255, 255, 255, 0.05);
+}
+
+.controls {
+  bottom: 0;
+  bottom: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+
+  button {
+    position: absolute;
+    background-position: center;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-color: #111;
+    border: unset;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+
+    &:hover {
+      transform: scale(1.15);
     }
+  }
+}
+
+.picture:hover .controls {
+  opacity: 1;
+}
+
+.download {
+  background-image: url('../../assets/icons/download.svg');
+  bottom: 3px;
+  right: 3px;
+}
+
+.share {
+  background-image: url('../../assets/icons/share.svg');
+  bottom: 3px;
+  right: 32px;
+}
+
+.delete {
+  background-image: url('../../assets/icons/cross.svg');
+  top: 3px;
+  right: 3px;
 }

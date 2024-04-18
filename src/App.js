@@ -26,7 +26,7 @@ function App(props) {
           <main className={styles.container}>
             <ToolsSideBar sticker={sticker} setSticker={setSticker} />
             <Workspace sticker={sticker} addPicture={addPicture} />
-            <Gallery pictures={pictures} />
+            <Gallery pictures={pictures} setPictures={setPictures} />
           </main>
         </Route>
         <Route path="/readme">

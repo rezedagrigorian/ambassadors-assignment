@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useWebcamCapture } from "../../useWebcamCapture";
 
 import styles from './Workspace.module.css';
-import logo from '../../slap.png';
+import logo from '../../assets/stickers/slap.png';
 
 const stickers = [logo].map((url) => {
   const img = document.createElement("img");
