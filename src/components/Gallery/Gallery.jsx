@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { createUseStyles } from "react-jss";
+import React from 'react';
 
+import { toast } from 'react-toastify';
 import styles from './Gallery.module.css';
 import globalStyles from '../../App.module.css';
 
@@ -18,6 +18,7 @@ const Gallery = (props) => {
     link.click();
     document.body.removeChild(link);
 
+    toast.success('Picture downloaded');
   }
 
   const deletePicture = (index) => {

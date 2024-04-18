@@ -1,42 +1,19 @@
-import { useState } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
-import styles from './App.module.css';
+import Home from './pages/Home';
+import Rules from './pages/Rules';
+import { ToastContainer } from 'react-toastify';
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import ToolsSideBar from './components/ToolsSideBar/ToolsSideBar';
-import Workspace from './components/Workspace/Workspace';
-import Gallery from './components/Gallery/Gallery';
-import Rules from "./components/Rules/Rules";
+import 'react-toastify/dist/ReactToastify.css';
 
-function App(props) {
-  const [sticker, setSticker] = useState([]);
-  const [pictures, setPictures] = useState([]);
-
-  const addPicture = (picture) => {
-    setPictures([...pictures, picture]);
-  }
-
-  return (
-    <div className={styles.app}>
-      <Header />
-      <Switch>
-        <Route path="/" exact>
-          <main className={styles.container}>
-            <ToolsSideBar sticker={sticker} setSticker={setSticker} />
-            <Workspace sticker={sticker} addPicture={addPicture} />
-            <Gallery pictures={pictures} setPictures={setPictures} />
-          </main>
-        </Route>
-        <Route path="/readme">
-          <Rules />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
-      <Footer />
-    </div>
-  );
-}
+const App = (props) => (
+  <>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/readme" element={<Rules />} />
+    </Routes>
+    <ToastContainer />
+  </>
+);
 
 export default App;
