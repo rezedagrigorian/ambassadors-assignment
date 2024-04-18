@@ -9,18 +9,25 @@ import Workspace from '../components/Workspace/Workspace';
 import Gallery from '../components/Gallery/Gallery';
 
 const Home = () => {
-  const [sticker, setSticker] = useState([]);
+  const [sticker, setSticker] = useState();
   const [pictures, setPictures] = useState([]);
+  const [title, setTitle] = useState('');
 
   const addPicture = (picture) => {
-    setPictures([...pictures, picture]);
+    setPictures([...pictures, { ...picture, title }]);
+    setSticker(null);
   }
 
   return (
     <div className={styles.app}>
       <Header />
       <div className={styles.container}>
-        <ToolsSideBar sticker={sticker} setSticker={setSticker} />
+        <ToolsSideBar
+          sticker={sticker}
+          setSticker={setSticker}
+          title={title}
+          setTitle={setTitle}
+        />
         <Workspace sticker={sticker} addPicture={addPicture} />
         <Gallery pictures={pictures} setPictures={setPictures} />
       </div>

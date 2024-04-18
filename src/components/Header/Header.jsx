@@ -1,21 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Header.module.css';
+
+import './header.scss';
+
+import avatar from '../../assets/avatar.jpeg';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <h1>SlapSticker</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">home</Link>
-          </li>
-          <li>
-            <Link to="/readme">readme</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="header">
+      <h1>StickerSnap</h1>
+      <img src={avatar} alt="avatar" />
+      <button>
+        Logout
+      </button>
     </header>
   );
 }

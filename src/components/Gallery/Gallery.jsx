@@ -26,16 +26,16 @@ const Gallery = (props) => {
   }
 
   return (
-    <>
-      <section className={globalStyles.sidebar}>
-        <h2>Gallery</h2>
-        {pictures.length === 0 && (
-          <div className={styles.empty}>
-            <p>No pictures captured yet</p>
-          </div>
-        )}
-        <div className={styles.scroller}>
-          {pictures.map((picture, index) => (
+    <section className={globalStyles.sidebar}>
+      <h2>Gallery</h2>
+      {pictures.length === 0 && (
+        <div className={styles.empty}>
+          <p>No pictures captured yet</p>
+        </div>
+      )}
+      <div className={styles.scroller}>
+        {pictures.map((picture, index) => (
+          <div key={index} className={styles.pictureWrapper}>
             <div key={index} className={styles.picture}>
               <img src={picture.dataUri} />
               <div className={styles.controls}>
@@ -43,12 +43,12 @@ const Gallery = (props) => {
                 <button onClick={() => sharePicture(picture)} class={styles.share} />
                 <button onClick={() => downloadPicture(picture)} class={styles.download} />
               </div>
-              <h3>{picture.title}</h3>
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+            <h3>{picture.title}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

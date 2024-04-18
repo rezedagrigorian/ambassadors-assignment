@@ -1,10 +1,12 @@
 import React from 'react';
-import styles from './Footer.module.css';
+// import styles from './Footer.module.css';
+
+import './footer.scss';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <p>Made with <span className={styles.heart}>❤️</span> by @desertoraposa</p>
+    <footer className="footer">
+      <p>Made with <span className="heart">❤️</span> by @desertoraposa</p>
     </footer>
   );
 }

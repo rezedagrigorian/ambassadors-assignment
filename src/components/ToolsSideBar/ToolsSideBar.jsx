@@ -22,36 +22,25 @@ const stickers = [logo, fun, hot, loveit, no, smile, vibes, crown, err, party, u
 });
 
 const ToolsSideBar = (props) => {
-  const { sticker, setSticker } = props;
-  const [title, setTitle] = useState("SLAPPE!");
-
+  const { sticker, setSticker, title, setTitle } = props;
+  console.log(sticker);
   return (
-    <>
-      <section className={globalStyles.sidebar}>
-        <div className={styles.steps}>
-          <h3> Give your photo a title</h3>
-          <input
-            type="text"
-            value={title}
-            onChange={(ev) => setTitle(ev.target.value)}
-          />
-          <div className={styles.stickersWrapper}>
-            <h3>Choose your sticker</h3>
-            <div className={styles.stickers}>
-              {stickers.map((sticker, index) => (
-                <button key={index} onClick={() => setSticker(sticker)}>
-                  <img src={sticker.url} alt={`sticker-${index}`} />
-                </button>
-              ))}
-            </div>
-          </div>
-          <h3>Choose filters for your photo</h3>
-          <button className={styles.captureButton}>
-            Make a photo
+    <section className={globalStyles.sidebar}>
+      <h2>The best title!</h2>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <h2>And the best sticker!</h2>
+      <div className={styles.stickers}>
+        {stickers.map((sticker, index) => (
+          <button key={index} onClick={() => setSticker(sticker)}>
+            <img src={sticker.url} alt={`sticker-${index}`} />
           </button>
-        </div>
-      </section>
-    </>
+        ))}
+      </div>
+    </section>
   );
 }
 

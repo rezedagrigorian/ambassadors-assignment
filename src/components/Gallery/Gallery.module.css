@@ -6,6 +6,18 @@
   overflow-y: scroll;
 }
 
+.pictureWrapper {
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    color: #fff;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
 .picture {
   display: flex;
   position: relative;
