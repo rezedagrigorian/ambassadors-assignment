@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import styles from './ToolsSideBar.module.css';
-import globalStyles from '../../App.module.css';
+import './tools_sidebar.scss';
+import Sidebar from '../Sidebar/Sidebar';
 
 import logo from '../../assets/stickers/slap.png';
 import fun from '../../assets/stickers/fun.png';
@@ -25,22 +25,35 @@ const ToolsSideBar = (props) => {
   const { sticker, setSticker, title, setTitle } = props;
   console.log(sticker);
   return (
-    <section className={globalStyles.sidebar}>
-      <h2>The best title!</h2>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <h2>And the best sticker!</h2>
-      <div className={styles.stickers}>
-        {stickers.map((sticker, index) => (
-          <button key={index} onClick={() => setSticker(sticker)}>
-            <img src={sticker.url} alt={`sticker-${index}`} />
-          </button>
-        ))}
+    <Sidebar title="Settings">
+      <div className="settings">
+        <div className="sub_header">
+          Art name
+        </div>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter your art title!"
+        />
+        <div className="sub_header">
+          Stickers
+        </div>
+        <div className="stickers__wrapper">
+          <div className="stickers">
+            {stickers.map((stick, index) => (
+              <button
+                key={index}
+                onClick={() => setSticker(stick)}
+                className={(sticker && sticker.url === stick.url) ? 'active' : ''}
+              >
+                <img src={stick.url} alt={`sticker-${index}`} />
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
-    </section>
+    </Sidebar>
   );
 }
 

@@ -34,20 +34,22 @@ const Gallery = (props) => {
           <p>No pictures captured yet</p>
         </div>
       )}
-      <div className="scroller">
-        {pictures.map((picture, index) => (
-          <div key={index} className="picture__wrapper">
-            <div className="picture">
-              <img src={picture.dataUri} alt={picture.title} />
-              <div className="controls">
-                <button onClick={() => deletePicture(index)} className="delete" />
-                <button onClick={() => sharePicture(picture)} className="share" />
-                <button onClick={() => downloadPicture(picture)} className="download" />
+      <div className="scroller__wrapper">
+        <div className="scroller">
+          {pictures.map((picture, index) => (
+            <div key={index} className="picture__wrapper">
+              <div className="picture">
+                <img src={picture.dataUri} alt={picture.title} />
+                <div className="controls">
+                  <button onClick={() => deletePicture(index)} className="delete" />
+                  <button onClick={() => sharePicture(picture)} className="share" />
+                  <button onClick={() => downloadPicture(picture)} className="download" />
+                </div>
               </div>
+              <h3>{picture.title}</h3>
             </div>
-            <h3>{picture.title}</h3>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </Sidebar>
   );
