@@ -1,0 +1,16 @@
+.scroller {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    max-height: calc(100% - 140px);
+    overflow-y: scroll;
+}
+
+.picture {
+    width: 100%;
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
