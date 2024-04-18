@@ -1,3 +1,5 @@
+/* eslint react-hooks/exhaustive-deps: off */
+
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useWebcamCapture = (stickerImg, title) => {
