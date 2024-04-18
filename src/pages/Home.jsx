@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import styles from '../App.module.css';
+import '../app.scss';
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -19,9 +19,9 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.app}>
+    <div className="app">
       <Header />
-      <div className={styles.container}>
+      <div className="container">
         <ToolsSideBar
           sticker={sticker}
           setSticker={setSticker}
